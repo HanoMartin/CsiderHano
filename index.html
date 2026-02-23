@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feladatkezelő</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladatkezelő</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>Feladatkezelő</h1>
-  <div class="hamburger">☰</div>
-  <nav>
-    <button id="temaGomb">Téma váltás</button>
-  </nav>
+    <h1>Feladatkezelő</h1>
+    <div class="hamburger">☰</div>
+    <nav>
+        <button id="temaGomb">Téma váltás</button>
+    </nav>
 </header>
 
 <main>
-
-<div class="uj-feladat">
-  <input type="text" id="ujCim" placeholder="Új feladat...">
-  <button onclick="ujFeladat()">Hozzáadás</button>
-  <input type="text" id="kereses" placeholder="Keresés..." oninput="keres()">
-</div>
-
-<div class="feladatok" id="feladatLista"></div>
-
+        <section class="uj-feladat">
+            <input type="text" id="ujCim" placeholder="Új feladat...">
+            <button id="hozzaadGomb">Hozzáadás</button>
+            <input type="text" id="kereso" placeholder="Keresés...">
+        </section>
+        <section class="feladatok" id="feladatLista"></section>
 </main>
+
+<script src="script.js"></script>
 </body>
 </html>
