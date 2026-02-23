@@ -15,8 +15,14 @@ async function fetchData() {
 
 function megjelenites(adat) {
     adat.forEach(element => {
-        megjelenitodiv.innerHTML += element.userId +  " " + `${element.id}` + " " + `${element.title}` + " " + `${element.completed} `+ "<br>"
+        const kesz = element.completed
+        let card = document.createElement("card");
+        card.classList.add("kartya")
+        megjelenitodiv.append(card)
+        card.innerHTML += element.userId +  " " + `${element.id}` + " " + `${element.title}` + " " + `${kesz} `+ "<br>"
     })
+
+
 }
 
 fetchData()
