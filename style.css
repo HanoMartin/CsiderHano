@@ -100,6 +100,10 @@ main {
     border-radius: 8px;
 }
 
+header{
+    background: #DAA520;
+}
+
 .completed {
     text-decoration: line-through;
     opacity: 0.6;
