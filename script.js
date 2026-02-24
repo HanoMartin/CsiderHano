@@ -7,25 +7,49 @@ async function fetchData() {
             throw new Error("Hiba", szerverValasz.status);
         }
         const adat = await szerverValasz.json();
-        megjelenites(adat)
+        megjelenites(adat) 
+        
     } catch (Error){
         console.log(Error)
     }
 }
+
+
+
 function megjelenites(adat) {
+    megjelenitodiv.innerHTML = ""; 
+
     adat.forEach(element => {
-        const kesz = element.completed
-        let card = document.createElement("card");
-        card.classList.add("kartya")
-        megjelenitodiv.append(card)
-        let check = document.createElement("button")
-        card.append(check)
-        check.innerHTML = kesz
-        card.innerHTML += element.userId +  " " + `${element.id}` + " " + `${element.title}` + " " + `${kesz} `+  "<br>"
+        let card = document.createElement("div");
+        card.classList.add("kartya");
         
-    })
-    
+        if (element.completed) {
+            card.classList.add("completed");
+        }
+
+        card.textContent = `${element.title}  ${element.userId} ${element.completed}`;
+
+        let check = document.createElement("input");
+        check.setAttribute("type", "checkbox");
+        check.checked = element.completed
+
+        check.addEventListener("change", function () {
+            
+            if (check.checked) {
+                card.classList.add("completed");
+                element.completed = "true";
+            } else {
+                card.classList.remove("completed");
+                element.completed = "false";
+            } 
+            card.textContent = `${element.title}  ${element.userId} ${element.completed}`;
+            card.append(check);
+        });
+        card.append(check);
+        megjelenitodiv.append(card);
+    });
 }
 
 
 fetchData()
+
