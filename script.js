@@ -61,6 +61,19 @@ function megjelenites(adat) {
     });
 }
 
+const valtozas = document.getElementById("temaGomb")
+let sotet = false
+valtozas.addEventListener("click", function () {
+    
+    if (!sotet) {
+        document.body.classList.add("dark")
+        sotet = true
+    }
+    else{
+        document.body.classList.remove("dark")
+        sotet = false
+    }
+})
 
 fetchData()
 
