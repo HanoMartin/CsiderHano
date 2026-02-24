@@ -44,8 +44,19 @@ function megjelenites(adat) {
             } 
             card.textContent = `${element.title}  ${element.userId} ${element.completed}`;
             card.append(check);
+            card.append(torles)
         });
-        card.append(check);
+
+        const torles = document.createElement("button")
+        torles.innerHTML = "Törlés"
+        torles.style.marginLeft = "10px"
+
+        torles.addEventListener("click", function () {
+            card.remove()
+        })
+       
+        card.append(check); 
+        card.append(torles)
         megjelenitodiv.append(card);
     });
 }
