@@ -75,5 +75,6 @@ valtozas.addEventListener("click", function () {
     }
 })
 
+
 fetchData()
 
