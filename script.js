@@ -90,3 +90,8 @@ temaGomb.addEventListener("click", () => {
 hamburger.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
+
+hozzaadGomb.addEventListener("click", ujFeladatLetrehozas);
+keresoInput.addEventListener("input", keres);
+
+betoltFeladatok();
