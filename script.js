@@ -68,3 +68,8 @@ function statuszValtas(id) {
     feladat.completed = !feladat.completed;
     megjelenit(feladatok);
 }
+
+function torles(id) {
+    feladatok = feladatok.filter(f => f.id !== id);
+    megjelenit(feladatok);
+}
