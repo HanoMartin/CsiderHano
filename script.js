@@ -62,3 +62,9 @@ async function ujFeladatLetrehozas() {
     megjelenit(feladatok);
     ujCimInput.value = "";
 }
+
+function statuszValtas(id) {
+    const feladat = feladatok.find(f => f.id === id);
+    feladat.completed = !feladat.completed;
+    megjelenit(feladatok);
+}
