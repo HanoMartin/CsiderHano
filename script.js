@@ -73,3 +73,11 @@ function torles(id) {
     feladatok = feladatok.filter(f => f.id !== id);
     megjelenit(feladatok);
 }
+
+function keres() {
+    const szoveg = keresoInput.value.toLowerCase();
+    const szurt = feladatok.filter(f =>
+        f.title.toLowerCase().includes(szoveg)
+    );
+    megjelenit(szurt);
+}
