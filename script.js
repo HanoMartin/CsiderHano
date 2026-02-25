@@ -81,3 +81,12 @@ function keres() {
     );
     megjelenit(szurt);
 }
+
+temaGomb.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+
+
+hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
