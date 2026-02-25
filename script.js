@@ -42,3 +42,23 @@ function megjelenit(lista) {
         listaElem.appendChild(kartya);
     });
 }
+
+async function ujFeladatLetrehozas() {
+    const cim = ujCimInput.value.trim();
+    if (!cim) return;
+
+    const valasz = await fetch(API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            title: cim,
+            completed: false,
+            userId: 1
+        })
+    });
+
+    const uj = await valasz.json();
+    feladatok.unshift(uj);
+    megjelenit(feladatok);
+    ujCimInput.value = "";
+}
