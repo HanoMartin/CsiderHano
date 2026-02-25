@@ -16,3 +16,29 @@ async function betoltFeladatok() {
     feladatok = adat.slice(0, 15);
     megjelenit(feladatok);
 }
+function megjelenit(lista) {
+    listaElem.innerHTML = "";
+    lista.forEach(feladat => {
+        const kartya = document.createElement("div");
+        kartya.classList.add("kartya");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = feladat.completed;
+        checkbox.addEventListener("click", () => statuszValtas(feladat.id));
+
+        const cim = document.createElement("p");
+        cim.textContent = feladat.title;
+        if (feladat.completed) cim.classList.add("completed");
+
+        const user = document.createElement("small");
+        user.textContent = "User: " + feladat.userId;
+
+        const torlesGomb = document.createElement("button");
+        torlesGomb.textContent = "Törlés";
+        torlesGomb.addEventListener("click", () => torles(feladat.id));
+
+        kartya.append(checkbox, cim, user, document.createElement("br"), torlesGomb);
+        listaElem.appendChild(kartya);
+    });
+}
